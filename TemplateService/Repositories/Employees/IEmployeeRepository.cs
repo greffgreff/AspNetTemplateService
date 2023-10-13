@@ -6,7 +6,7 @@ public interface IEmployeeRepository
 {
     Task<Employee> GetEmployeeById(Guid id);
 
-    Task UpsertEmployee(Employee employee);
+    Task CreateOrUpdateEmployee(Employee employee);
     
     Task<IEnumerable<Employee>> GetEmployees();
     

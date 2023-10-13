@@ -34,7 +34,7 @@ public class EmployeeService : IEmployeeService
 
     public void CreateOrUpdateEmployee(Employee employee)
     {
-        repository.UpsertEmployee(employee).Await();
+        repository.CreateOrUpdateEmployee(employee).Await();
     }
 
     public void DeleteEmployeeById(Guid id)

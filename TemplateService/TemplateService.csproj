@@ -19,7 +19,6 @@
       <Content Include="..\.dockerignore">
         <Link>.dockerignore</Link>
       </Content>
-      <Content Include="Repositories\.DS_Store" />
     </ItemGroup>
 
 </Project>
