@@ -1,6 +1,6 @@
-﻿using TemplateService.Models;
-using TemplateService.Repositories.Connection;
+﻿using TemplateService.Repositories.Connection;
 using Dapper;
+using TemplateService.Contracts;
 
 namespace TemplateService.Repositories.Employees;
 

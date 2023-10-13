@@ -1,4 +1,4 @@
-using TemplateService.Models;
+using TemplateService.Contracts;
 
 namespace TemplateService.Services.Employees;
 

@@ -1,8 +1,7 @@
 using Swan;
+using TemplateService.Contracts;
 using TemplateService.Exceptions;
-using TemplateService.Models;
 using TemplateService.Repositories.Employees;
-using TemplateService.Services.Employees;
 
 namespace TemplateService.Services.Employees;
 

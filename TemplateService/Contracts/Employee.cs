@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace TemplateService.Models;
+namespace TemplateService.Contracts;
 
 public record Employee
 {

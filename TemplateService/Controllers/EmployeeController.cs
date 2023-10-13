@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using TemplateService.Models;
+using TemplateService.Contracts;
 using TemplateService.Services.Employees;
 
 namespace TemplateService.Controllers;
