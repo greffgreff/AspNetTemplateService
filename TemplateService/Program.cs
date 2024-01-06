@@ -1,5 +1,4 @@
 using System.Text.Json.Serialization;
-using TemplateService.Middlewares;
 using TemplateService.Repositories.Connection;
 using TemplateService.Repositories.Employees;
 using TemplateService.Services.Employees;
@@ -24,7 +23,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.UseMiddleware<HttpExceptionMiddleware>();
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();

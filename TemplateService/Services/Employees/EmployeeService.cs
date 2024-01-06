@@ -1,6 +1,7 @@
 using Swan;
 using TemplateService.Contracts;
-using TemplateService.Exceptions;
+using TemplateService.Models;
+using TemplateService.Models.Exceptions;
 using TemplateService.Repositories.Employees;
 
 namespace TemplateService.Services.Employees;
@@ -14,30 +15,33 @@ public class EmployeeService : IEmployeeService
         this.repository = repository;
     }
 
-    public Employee GetEmployeeById(Guid id)
+    public Result<Employee> GetEmployeeById(Guid id)
     {
         var employee = repository.GetEmployeeById(id).Await();
 
         if (employee == null)
         {
-            throw new EmployeeNotFound(id);
+            return Result.Failure(new EmployeeNotFound(id));
         }
 
-        return employee;
+        return Result<Employee>.Success(employee);
     }
 
-    public IEnumerable<Employee> GetEmployees()
+    public Result<IEnumerable<Employee>> GetEmployees()
     {
-        return repository.GetEmployees().Await();
+        var employees = repository.GetEmployees().Await();
+        return Result<IEnumerable<Employee>>.Success(employees);
     }
 
-    public void CreateOrUpdateEmployee(Employee employee)
+    public Result CreateOrUpdateEmployee(Employee employee)
     {
         repository.CreateOrUpdateEmployee(employee).Await();
+        return Result.Success(employee);
     }
 
-    public void DeleteEmployeeById(Guid id)
+    public Result DeleteEmployeeById(Guid id)
     {
         repository.DeleteEmployeeById(id).Await();
+        return Result.Success();
     }
 }

@@ -16,7 +16,7 @@ public class EmployeeController : ControllerBase
     }
     
     [HttpGet("{id}")]
-    public Employee GetById(Guid id)
+    public IActionResult GetById(Guid id)
     {
         return service.GetEmployeeById(id);
     }

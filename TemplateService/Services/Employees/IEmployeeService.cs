@@ -1,14 +1,15 @@
 using TemplateService.Contracts;
+using TemplateService.Models;
 
 namespace TemplateService.Services.Employees;
 
 public interface IEmployeeService
 {
-    Employee GetEmployeeById(Guid id);
+    Result<Employee> GetEmployeeById(Guid id);
 
-    IEnumerable<Employee> GetEmployees();
+    Result<IEnumerable<Employee>> GetEmployees();
 
-    void CreateOrUpdateEmployee(Employee employee);
+    Result CreateOrUpdateEmployee(Employee employee);
     
-    void DeleteEmployeeById(Guid id);
+    Result DeleteEmployeeById(Guid id);
 }
